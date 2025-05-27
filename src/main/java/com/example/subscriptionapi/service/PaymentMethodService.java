@@ -5,12 +5,19 @@ import com.example.subscriptionapi.repository.PaymentMethodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PaymentMethodService {
+
     @Autowired
-    private PaymentMethodRepository repository;
+    private PaymentMethodRepository repo;
 
     public PaymentMethod add(PaymentMethod method) {
-        return repository.save(method);
+        return repo.save(method);
+    }
+
+    public List<PaymentMethod> findByCustomerId(String customerId) {
+        return repo.findByCustomerId(customerId);
     }
 }

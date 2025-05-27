@@ -5,6 +5,8 @@ import com.example.subscriptionapi.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.Map;
+
 
 import java.util.Optional;
 
@@ -30,4 +32,23 @@ public class SubscriptionController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+    @PatchMapping("/{id}")
+    public ResponseEntity<Subscription> updateSubscription(
+            @PathVariable String id,
+            @RequestBody Map<String, Object> updates) {
+        Subscription updated = service.updateSubscription(id, updates);
+        return ResponseEntity.ok(updated);
+    }
+    @PatchMapping("/{id}/trial")
+    public ResponseEntity<Subscription> extendTrialPeriod(
+            @PathVariable String id,
+            @RequestBody Map<String, Integer> body) {
+
+        Integer extraDays = body.get("extraDays");
+        Subscription updated = service.extendTrialPeriod(id, extraDays);
+        return ResponseEntity.ok(updated);
+    }
+
+
+
 }
