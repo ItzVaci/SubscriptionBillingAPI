@@ -74,4 +74,4 @@ src/
         └── static/
 
 ## Author
-Fatlind – Interface Programming Course Project
+Vlatko Angelov – Interface Programming Course Project
