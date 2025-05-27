@@ -58,20 +58,5 @@ http://localhost:8080
 ## API Documentation
 See the Postman collection for full endpoint usage.
 
-## Folder Structure
-
-src/
-└── main
-    ├── java
-    │   └── com.example.subscriptionapi
-    │       ├── controller
-    │       ├── model
-    │       ├── repository
-    │       ├── service
-    │       └── config
-    └── resources
-        ├── application.properties
-        └── static/
-
 ## Author
 Vlatko Angelov – Interface Programming Course Project
